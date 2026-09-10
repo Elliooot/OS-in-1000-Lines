@@ -33,17 +33,8 @@ void putchar(char ch) {
 void kernel_main(void) {
     memset(__bss, 0, (size_t) __bss_end - (size_t) __bss);
 
-    // const char *s = "\n\nHello, RISC-V World!\n";
-    // for (int i = 0; s[i] != '\0'; i++) {
-    //     putchar(s[i]);
-    // }
-
-    printf("\n\nHello, RISC-V World!\n");
-    printf("1 + 2 = %d, %x\n", 1 + 2, 0x1234abcd);
-
-    for (;;) {
-        __asm__ __volatile__("wfi"); // Wait for interrupt
-    }
+    PANIC("booted!");
+    printf("unreachble here!\n");
 }
 
 __attribute__((section(".text.boot")))
