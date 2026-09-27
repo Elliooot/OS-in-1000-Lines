@@ -1,6 +1,8 @@
 #pragma once
 #include "common.h"
 
+void yield(void);
+
 struct sbiret {
     long error;
     long value;
